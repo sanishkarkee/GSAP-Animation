@@ -1,104 +1,113 @@
-// gsap.to('#box1', {
-//   x: 1200,
+gsap.from('#page1 #box', {
+  scale: 0,
+  delay: 1,
+  duration: 2,
+  rotate: 360,
+});
+
+// gsap.from('#page2 #box', {
+//   scale: 0,
+//   // delay: 1,
 //   duration: 2,
-//   delay: 1,
-//   rotate: 90,
-//   backgroundColor: 'green',
-//   borderRadius: '50%',
+//   rotate: 360,
+//   scrollTrigger: {
+//     trigger: '#page2 #box',
+//     scroller: 'body',
+//     markers: true,
+//     start: 'top 50%', //jaba trigger element i.e. ('#page2 #box') chai vertical viewport height ko 50% pugxa taba animation start hunxa
+//   },
 // });
 
-// gsap.from('#box2', {
-//   x: 500,
-//   duration: 2,
-//   delay: 1,
-//   borderRadius: '50%',
-// });
+// -------------------------------------------------------------------------
 
-// gsap.from('h1', {
+// When there are multiple content inside div element
+// gsap.from('#page2 h1', {
 //   opacity: 0,
 //   duration: 2,
-//   delay: 1,
-//   color: 'green',
-//   y: 200,
-//   stagger: -4,
+//   x: 500,
+
+//   scrollTrigger: {
+//     trigger: '#page2 h1',
+//     scroller: 'body',
+//     markers: true,
+//     start: 'top 50%',
+//   },
 // });
 
-// gsap.to('#box', {
-//   x: 1200,
+// gsap.from('#page2 h2', {
+//   opacity: 0,
 //   duration: 2,
-//   delay: 1,
-//   rotate: 360,
-//   repeat: 2,
-//   yoyo: true,
+//   x: -500,
+
+//   scrollTrigger: {
+//     trigger: '#page2 h2',
+//     scroller: 'body',
+//     markers: true,
+//     start: 'top 50%',
+//   },
 // });
 
-// gsap.to('#box1', {
-//   x: 1500,
-//   rotate: 360,
-//   duration: 1.5,
-//   delay: 1,
+// -------------------------------------------------------------------------
+
+// gsap.from('#page2 #box', {
+//   opacity: 0,
+//   scale: 0,
+//   duration: 1,
+//   rotate: 720,
+
+//   scrollTrigger: {
+//     trigger: '#page2 #box', //OR trigger: '#page2' matra lekhda ni hunxa
+//     scroller: 'body',
+//     markers: true,
+//     start: 'top 60%',
+//     end: 'top 10%',
+//     scrub: 2,
+//     pin: true,
+//   },
 // });
 
-// gsap.to('#box2', {
-//   x: 1500,
-//   backgroundColor: 'yellow',
-//   duration: 1.5,
-//   delay: 2.5, //case: box1 paxi matra box2 suru garna lai, box1 1.5 sec samma chalxa ani 1 sec paxi matra start hunxa so boz 2 lai 1.5+1= 2.5 sec paxi matra suru garda hunxa
+// ----------------------------------PIN-----------------------------------
+// gsap.to('#page2 h1', {
+//   transform: 'translateX(-195%)',
+
+//   scrollTrigger: {
+//     trigger: '#page2 ',
+//     scroller: 'body',
+//     markers: true,
+//     start: 'top 0%', // section complete screen ma aaye paxi matra animation start garna lai
+//     end: 'top -100%',
+//     scrub: 2,
+//     pin: true,
+//   },
 // });
 
-// gsap.to('#box3', {
-//   x: 1500,
-//   scale: 0.5,
-//   borderRadius: '50%',
-//   duration: 1.5,
-//   delay: 4, // yo pani box 2 ko 2.5+1.5=4 garera aako ho
-// });
+// ----Pratice----
+gsap.to('#page2 h1', {
+  transform: 'translateX(-220%)',
 
-// --------TIMELINE--------
-// var tl = gsap.timeline();
-
-// tl.to('#box1', {
-//   x: 1500,
-//   rotate: 360,
-//   duration: 1.5,
-//   delay: 1,
-// });
-
-// tl.to('#box2', {
-//   x: 1500,
-//   backgroundColor: 'yellow',
-//   duration: 1.5,
-// });
-
-// tl.to('#box3', {
-//   x: 1500,
-//   scale: 0.5,
-//   borderRadius: '50%',
-//   duration: 1.5,
-// });
-
-// OR
-
-var tl = gsap.timeline();
-
-tl.from('h2', {
-  y: -20,
-  opacity: 0,
-  duration: 1,
-  delay: 0.5,
+  scrollTrigger: {
+    trigger: '#page2',
+    scroller: 'body',
+    markers: true,
+    start: 'top 0%',
+    end: 'top -150%',
+    scrub: true,
+    pin: true,
+  },
 });
 
-tl.from('h4', {
-  y: -20,
-  opacity: 0,
-  duration: 1,
-  delay: 0.5,
-  stagger: 0.3,
-});
+// PAGE3 :Video scroll trigger ,SCALE
+gsap.to('#page3 video', {
+  scale: 0.7,
+  opacity: 1,
 
-tl.from('h1', {
-  y: 20,
-  opacity: 0,
-  duration: 0.5,
-  scale: 0.2,
+  scrollTrigger: {
+    trigger: '#page3',
+    scroller: 'body',
+    markers: true,
+    start: 'top 0%',
+    end: 'top -100%',
+    scrub: true,
+    pin: true,
+  },
 });
