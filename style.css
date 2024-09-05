@@ -12,47 +12,10 @@ body {
 }
 
 body {
-  overflow-x: hidden;
+  background-color: #111;
 }
 
-#page1 {
+#string {
   width: 100%;
-  height: 100%;
-  background-color: #000;
-}
-
-#page2 {
-  width: 100%;
-  height: 100%;
-  padding: 5vw 0x;
-  background-color: rgb(36, 176, 223);
-}
-#page2 h1 {
-  font-size: 40vw;
-  text-transform: uppercase;
-  font-weight: 400;
-}
-
-#page3 {
-  width: 100%;
-  height: 100%;
-  background-color: green;
-  position: relative;
-}
-#page3 .video-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-#page3 .video-container video {
-  opacity: 0;
-  scale: 0.2;
-}
-
-#page4 {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: orangered;
+  height: 200px;
 }/*# sourceMappingURL=style.css.map */

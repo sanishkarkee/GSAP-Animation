@@ -1,113 +1,54 @@
-gsap.from('#page1 #box', {
-  scale: 0,
-  delay: 1,
-  duration: 2,
-  rotate: 360,
+//NOTE: yesma change hune bhaneko center ko (x,y) value matra ho,starting ra ending point change hudaina
+
+// var path = `M 10 100 Q 500 100 990 100`;
+
+// var finalPath = `M 10 100 Q 500 100 990 100`;
+
+// var string = document.querySelector('#string');
+
+// string.addEventListener('mousemove', (dets) => {
+//   // (dets.x) => x-axis value    &&    (dets.y) => y-axis value
+//   path = `M 10 100 Q ${dets.x} ${dets.y} 990 100`;
+
+//   gsap.to('svg path', {
+//     attr: { d: path },
+//     duration: 0.2,
+//     ease: 'power3.out',
+//   });
+// });
+
+// string.addEventListener('mouseleave', () => {
+//   gsap.to('svg path', {
+//     attr: { d: finalPath },
+//     duration: 1.5,
+//     ease: 'elastic.out(1.5,0.1)',
+//   });
+// });
+
+// -------------------------PRATICE-------------------------
+//Note: yesma change hune bhaneko center ko (x,y) value matra ho
+//starting ra ending point change hudaina
+
+let path = `M 10 100 Q 500 100 990 100`;
+
+let finalPath = `M 10 100 Q 500 100 990 100`;
+
+const string = document.querySelector('#string');
+
+string.addEventListener('mousemove', (receivedValue) => {
+  path = `M 10 100 Q ${receivedValue.x} ${receivedValue.y} 990 100`;
+
+  gsap.to('svg path', {
+    attr: { d: path },
+    duration: 0.2,
+    ease: 'power3.out',
+  });
 });
 
-// gsap.from('#page2 #box', {
-//   scale: 0,
-//   // delay: 1,
-//   duration: 2,
-//   rotate: 360,
-//   scrollTrigger: {
-//     trigger: '#page2 #box',
-//     scroller: 'body',
-//     markers: true,
-//     start: 'top 50%', //jaba trigger element i.e. ('#page2 #box') chai vertical viewport height ko 50% pugxa taba animation start hunxa
-//   },
-// });
-
-// -------------------------------------------------------------------------
-
-// When there are multiple content inside div element
-// gsap.from('#page2 h1', {
-//   opacity: 0,
-//   duration: 2,
-//   x: 500,
-
-//   scrollTrigger: {
-//     trigger: '#page2 h1',
-//     scroller: 'body',
-//     markers: true,
-//     start: 'top 50%',
-//   },
-// });
-
-// gsap.from('#page2 h2', {
-//   opacity: 0,
-//   duration: 2,
-//   x: -500,
-
-//   scrollTrigger: {
-//     trigger: '#page2 h2',
-//     scroller: 'body',
-//     markers: true,
-//     start: 'top 50%',
-//   },
-// });
-
-// -------------------------------------------------------------------------
-
-// gsap.from('#page2 #box', {
-//   opacity: 0,
-//   scale: 0,
-//   duration: 1,
-//   rotate: 720,
-
-//   scrollTrigger: {
-//     trigger: '#page2 #box', //OR trigger: '#page2' matra lekhda ni hunxa
-//     scroller: 'body',
-//     markers: true,
-//     start: 'top 60%',
-//     end: 'top 10%',
-//     scrub: 2,
-//     pin: true,
-//   },
-// });
-
-// ----------------------------------PIN-----------------------------------
-// gsap.to('#page2 h1', {
-//   transform: 'translateX(-195%)',
-
-//   scrollTrigger: {
-//     trigger: '#page2 ',
-//     scroller: 'body',
-//     markers: true,
-//     start: 'top 0%', // section complete screen ma aaye paxi matra animation start garna lai
-//     end: 'top -100%',
-//     scrub: 2,
-//     pin: true,
-//   },
-// });
-
-// ----Pratice----
-gsap.to('#page2 h1', {
-  transform: 'translateX(-220%)',
-
-  scrollTrigger: {
-    trigger: '#page2',
-    scroller: 'body',
-    markers: true,
-    start: 'top 0%',
-    end: 'top -150%',
-    scrub: true,
-    pin: true,
-  },
-});
-
-// PAGE3 :Video scroll trigger ,SCALE
-gsap.to('#page3 video', {
-  scale: 0.7,
-  opacity: 1,
-
-  scrollTrigger: {
-    trigger: '#page3',
-    scroller: 'body',
-    markers: true,
-    start: 'top 0%',
-    end: 'top -100%',
-    scrub: true,
-    pin: true,
-  },
+string.addEventListener('mouseleave', (receivedValue) => {
+  gsap.to('svg path', {
+    attr: { d: finalPath },
+    duration: 4,
+    ease: 'elastic.out(1.5,0.1)',
+  });
 });
