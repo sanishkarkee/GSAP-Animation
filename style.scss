@@ -15,8 +15,62 @@ body {
   background-color: #111;
 }
 
-#string {
+// --------- Normal cursor animation---------
+// #main {
+//   width: 100%;
+//   height: 100%;
+
+//   #cursor {
+//     width: 20px;
+//     height: 20px;
+//     background-color: #fff;
+//     border-radius: 50%;
+//     position: fixed;
+//   }
+// }
+
+// --------- Advanced cursor animation---------
+
+#cursor {
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: fixed;
+  font-size: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 9;
+}
+
+#main {
   width: 100%;
-  height: 200px;
-  // background-color: crimson;
+  height: 100vh;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  #image {
+    width: 60vw;
+    height: 30vw;
+    background-color: red;
+    position: relative;
+
+    #overlay {
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 10;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }
