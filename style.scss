@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: aeonik;
 }
 
 html,
@@ -11,66 +11,125 @@ body {
   height: 100%;
 }
 
-body {
-  background-color: #111;
-}
+// body {
+//   overflow-x: hidden; //#full lai right ma push gareko xa so tesko x-axis scroll hatauna
+// }
 
-// --------- Normal cursor animation---------
 // #main {
 //   width: 100%;
 //   height: 100%;
+//   background-image: url(https://images.pexels.com/photos/314726/pexels-photo-314726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+//   background-size: cover;
+//   background-position: center;
 
-//   #cursor {
-//     width: 20px;
-//     height: 20px;
-//     background-color: #fff;
-//     border-radius: 50%;
-//     position: fixed;
+//   #nav {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 40px 50px;
+//     color: #fff;
+
+//     h2 {
+//       font-size: 30px;
+//     }
+
+//     i {
+//       font-size: 30px;
+//       font-weight: 800;
+//       cursor: pointer;
+//     }
+//   }
+
+//   #full {
+//     width: 40%;
+//     height: 100%;
+//     position: absolute;
+//     background-color: #ffffff75;
+//     top: 0;
+//     right: -40%; // menu lai screen bahira push gareko
+
+//     backdrop-filter: blur(10px);
+//     padding: 150px 60px;
+
+//     h4 {
+//       font-size: 50px;
+//       font-weight: 500;
+//       margin-bottom: 10px;
+//     }
+
+//     i {
+//       position: absolute;
+//       top: 5%;
+//       right: 10%;
+//       background-color: #fff;
+//       padding: 5px;
+//       font-size: 20px;
+//       border-radius: 50%;
+//       font-weight: 600;
+//       cursor: pointer;
+//     }
 //   }
 // }
 
-// --------- Advanced cursor animation---------
+//----------------------------PRATICE---------------------------------
 
-#cursor {
-  width: 22px;
-  height: 22px;
-  background-color: #fff;
-  border-radius: 50%;
-  position: fixed;
-  font-size: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  z-index: 9;
+body {
+  overflow-x: hidden;
 }
 
 #main {
   width: 100%;
-  height: 100vh;
-  background-color: #111;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
+  background-image: url(https://images.pexels.com/photos/314726/pexels-photo-314726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-size: cover;
+  background-position: center;
+  position: relative;
 
-  #image {
-    width: 60vw;
-    height: 30vw;
-    background-color: red;
-    position: relative;
+  #nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 50px;
+    color: #fff;
 
-    #overlay {
-      background-color: transparent;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      z-index: 10;
+    h2 {
+      font-size: 30px;
     }
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    i {
+      font-size: 30px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+  }
+
+  #full {
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -40%; //initially hide gareko,,weight equal ko measurement line
+    backdrop-filter: blur(10px);
+    padding: 150px 60px;
+
+    h4 {
+      color: #f37f7f;
+      font-size: 50px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    i {
+      position: absolute;
+      top: 5%;
+      right: 10%;
+      background-color: #fff;
+      padding: 5px;
+      font-size: 20px;
+      border-radius: 50%;
+      font-weight: 600;
+      cursor: pointer;
     }
   }
 }

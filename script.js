@@ -1,44 +1,67 @@
-// --------- Normal cursor animation---------
-// var main = document.querySelector('#main');
-// var cursor = document.querySelector('#cursor');
+// var menu = document.querySelector('#nav i');
+// var cross = document.querySelector('#full i');
 
-// main.addEventListener('mousemove', (dets) => {
-//   gsap.to('#cursor', {
-//     x: dets.x,
-//     y: dets.y,
-//     duration: 1,
-//     ease: 'back.ou',
-//   });
+// var tl = gsap.timeline();
+
+// tl.to('#full', {
+//   right: '0',
+//   duration: 0.5,
 // });
 
-// --------- Advanced cursor animation---------
-let main = document.querySelector('#main');
-let cursor = document.querySelector('#cursor');
-let imageDiv = document.querySelector('#image');
+// tl.from('#full h4', {
+//   x: 150,
+//   duration: 0.6,
+//   stagger: 0.2,
+//   opacity: 0,
+// });
 
-// Mouse movement to update cursor position
-main.addEventListener('mousemove', (dets) => {
-  gsap.to(cursor, {
-    x: dets.x,
-    y: dets.y,
-    duration: 0.6,
-  });
+// tl.from('#full i', {
+//   opacity: '0',
+// });
+
+// tl.pause(); // Pause the timeline (means: animation within that timeline) initially
+
+// menu.addEventListener('click', () => {
+//   tl.play();
+// });
+
+// cross.addEventListener('click', () => {
+//   tl.reverse();
+// });
+
+// ----------------------------PRATICE---------------------------------
+
+var menu = document.querySelector('#nav i');
+var closeBtn = document.querySelector('#full i');
+
+var tl = gsap.timeline();
+/*
+STEP 1: btn click gare paxi k hunxa tesko animation haru milaune, tara initially
+ tyo animation chai active hudaina i.e. animation Pause() ma hunxa */
+
+tl.to('#full', {
+  right: 0,
+  duration: 0.5,
 });
 
-// On mouse enter, enlarge the cursor and show "View more"
-imageDiv.addEventListener('mouseenter', () => {
-  imageDiv.innerHTML = 'View more';
-  gsap.to(cursor, {
-    scale: 4,
-    backgroundColor: '#ffffff8a',
-  });
+tl.from('#full h4', {
+  x: 150,
+  duration: 0.4,
+  stagger: 0.2,
+  opacity: 0,
 });
 
-// On mouse leave, reset cursor scale and remove text
-imageDiv.addEventListener('mouseleave', () => {
-  imageDiv.innerHTML = '';
-  gsap.to(cursor, {
-    scale: 1,
-    backgroundColor: '#fff',
-  });
+tl.from('#full i', {
+  opacity: 0,
+});
+
+tl.pause(); //Initiall animation pause hunxa ,,hamburger click bhayesi matra animation Play() hunxa
+
+// menu items show garna
+menu.addEventListener('click', () => {
+  tl.play();
+});
+
+closeBtn.addEventListener('click', () => {
+  tl.reverse();
 });
