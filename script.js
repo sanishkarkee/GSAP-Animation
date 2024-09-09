@@ -1,41 +1,66 @@
-//TODO: Split word "Sheriyans" into individual letters in to each <span</span> tag and apply animation
+/* NOTES: Must remember things . There are 2 types of scroll and effects.
+          "Scroll Down" & "Scroll up". when "Scroll Down" marquee moves to left &
+          When "Scroll up" marquee moves right.
+*/
 
-// 1) Select whole element  => <h1>Sheriyans</h1>
-var h1 = document.querySelector('h1');
+// window.addEventListener('wheel', (dets) => {
+//   //yesma "deltaY" property hernu parxa scroll down garda deltaY:100, scrollup garda deltaY:-100 aauxa
+//   // console.log(dets);
 
-// 2) h1 element bhitra ko text select garxa  =>  [ Sheriyans ]
-var h1Text = h1.textContent;
+//   // GSAP code to move marquee to 'left' when 'SCROLL DOWN'
+//   if (dets.deltaY > 0) {
+//     gsap.to('.marquee', {
+//       transform: 'translateX(-200%)',
+//       repeat: -1,
+//       duration: 3,
+//       ease: 'none',  //bich ma jitter ko issue hataune
+//     });
 
-// 3) breaking whole sentences into individual words  =>  s,h,e,r,y,i,a,n,s
-var splittedText = h1Text.split(''); // break on the basis of nothing
+//     gsap.to('.marquee img', {
+//       rotate: 180,
+//     });
+//   }
+//   // GSAP code to move marquee to 'right' when 'SCROLL UP'
+//   else {
+//     gsap.to('.marquee', {
+//       transform: 'translateX(0%)',
+//       repeat: -1,
+//       duration: 3,
+//       ease: 'none',   //bich ma jitter ko issue hataune
+//     });
 
-var halfValue = Math.floor(splittedText.length / 2);
+//     gsap.to('.marquee img', {
+//       rotate: 0,
+//     });
+//   }
+// });
 
-var clutter = '';
+// --------------------- PRATICE ---------------------
 
-splittedText.forEach((elem, itemIndex) => {
-  if (itemIndex < halfValue) {
-    clutter = clutter + `<span class="a">${elem}</span>`;
+window.addEventListener('wheel', (wheelData) => {
+  console.log(wheelData);
+
+  if (wheelData.deltaY > 0) {
+    gsap.to('#move .marquee', {
+      transform: 'translateX(-200%)',
+      repeat: -1,
+      duration: 3,
+      ease: 'none',
+    });
+
+    gsap.to('.marquee img', {
+      rotate: 180,
+    });
   } else {
-    clutter = clutter + `<span class="b">${elem}</span>`;
+    gsap.to('#move .marquee', {
+      transform: 'translateX(0)',
+      repeat: -1,
+      duration: 3,
+      ease: 'none',
+    });
+
+    gsap.to('.marquee img', {
+      rotate: 0,
+    });
   }
-});
-
-h1.innerHTML = clutter;
-
-// 6) Applying the animation
-gsap.from('h1 .a', {
-  y: 80,
-  opacity: 0,
-  duration: 0.6,
-  delay: 0.5,
-  stagger: 0.15,
-});
-
-gsap.from('h1 .b', {
-  y: 80,
-  opacity: 0,
-  duration: 0.6,
-  delay: 0.5,
-  stagger: -0.15,
 });
