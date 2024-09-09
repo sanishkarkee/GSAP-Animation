@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: aeonik;
+  font-family: gilroy;
+  color: #fff;
 }
 
 html,
@@ -11,125 +12,20 @@ body {
   height: 100%;
 }
 
-// body {
-//   overflow-x: hidden; //#full lai right ma push gareko xa so tesko x-axis scroll hatauna
-// }
-
-// #main {
-//   width: 100%;
-//   height: 100%;
-//   background-image: url(https://images.pexels.com/photos/314726/pexels-photo-314726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-//   background-size: cover;
-//   background-position: center;
-
-//   #nav {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     padding: 40px 50px;
-//     color: #fff;
-
-//     h2 {
-//       font-size: 30px;
-//     }
-
-//     i {
-//       font-size: 30px;
-//       font-weight: 800;
-//       cursor: pointer;
-//     }
-//   }
-
-//   #full {
-//     width: 40%;
-//     height: 100%;
-//     position: absolute;
-//     background-color: #ffffff75;
-//     top: 0;
-//     right: -40%; // menu lai screen bahira push gareko
-
-//     backdrop-filter: blur(10px);
-//     padding: 150px 60px;
-
-//     h4 {
-//       font-size: 50px;
-//       font-weight: 500;
-//       margin-bottom: 10px;
-//     }
-
-//     i {
-//       position: absolute;
-//       top: 5%;
-//       right: 10%;
-//       background-color: #fff;
-//       padding: 5px;
-//       font-size: 20px;
-//       border-radius: 50%;
-//       font-weight: 600;
-//       cursor: pointer;
-//     }
-//   }
-// }
-
-//----------------------------PRATICE---------------------------------
-
 body {
-  overflow-x: hidden;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#main {
-  width: 100%;
-  height: 100%;
-  background-image: url(https://images.pexels.com/photos/314726/pexels-photo-314726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-  background-size: cover;
-  background-position: center;
-  position: relative;
+h1 {
+  font-size: 100px;
+  overflow: hidden; // h1 ko div bata matra animation dekhaun lai
+  // background-color: green;   // overflow:hidden test garna lai
 
-  #nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 50px;
-    color: #fff;
-
-    h2 {
-      font-size: 30px;
-    }
-
-    i {
-      font-size: 30px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-  }
-
-  #full {
-    width: 40%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: -40%; //initially hide gareko,,weight equal ko measurement line
-    backdrop-filter: blur(10px);
-    padding: 150px 60px;
-
-    h4 {
-      color: #f37f7f;
-      font-size: 50px;
-      font-weight: 500;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
-
-    i {
-      position: absolute;
-      top: 5%;
-      right: 10%;
-      background-color: #fff;
-      padding: 5px;
-      font-size: 20px;
-      border-radius: 50%;
-      font-weight: 600;
-      cursor: pointer;
-    }
+  // JS ko 6) ma puge paxi yo lekhne
+  span {
+    display: inline-block;
   }
 }

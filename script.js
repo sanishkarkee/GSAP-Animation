@@ -1,67 +1,41 @@
-// var menu = document.querySelector('#nav i');
-// var cross = document.querySelector('#full i');
+//TODO: Split word "Sheriyans" into individual letters in to each <span</span> tag and apply animation
 
-// var tl = gsap.timeline();
+// 1) Select whole element  => <h1>Sheriyans</h1>
+var h1 = document.querySelector('h1');
 
-// tl.to('#full', {
-//   right: '0',
-//   duration: 0.5,
-// });
+// 2) h1 element bhitra ko text select garxa  =>  [ Sheriyans ]
+var h1Text = h1.textContent;
 
-// tl.from('#full h4', {
-//   x: 150,
-//   duration: 0.6,
-//   stagger: 0.2,
-//   opacity: 0,
-// });
+// 3) breaking whole sentences into individual words  =>  s,h,e,r,y,i,a,n,s
+var splittedText = h1Text.split(''); // break on the basis of nothing
 
-// tl.from('#full i', {
-//   opacity: '0',
-// });
+var halfValue = Math.floor(splittedText.length / 2);
 
-// tl.pause(); // Pause the timeline (means: animation within that timeline) initially
+var clutter = '';
 
-// menu.addEventListener('click', () => {
-//   tl.play();
-// });
-
-// cross.addEventListener('click', () => {
-//   tl.reverse();
-// });
-
-// ----------------------------PRATICE---------------------------------
-
-var menu = document.querySelector('#nav i');
-var closeBtn = document.querySelector('#full i');
-
-var tl = gsap.timeline();
-/*
-STEP 1: btn click gare paxi k hunxa tesko animation haru milaune, tara initially
- tyo animation chai active hudaina i.e. animation Pause() ma hunxa */
-
-tl.to('#full', {
-  right: 0,
-  duration: 0.5,
+splittedText.forEach((elem, itemIndex) => {
+  if (itemIndex < halfValue) {
+    clutter = clutter + `<span class="a">${elem}</span>`;
+  } else {
+    clutter = clutter + `<span class="b">${elem}</span>`;
+  }
 });
 
-tl.from('#full h4', {
-  x: 150,
-  duration: 0.4,
-  stagger: 0.2,
+h1.innerHTML = clutter;
+
+// 6) Applying the animation
+gsap.from('h1 .a', {
+  y: 80,
   opacity: 0,
+  duration: 0.6,
+  delay: 0.5,
+  stagger: 0.15,
 });
 
-tl.from('#full i', {
+gsap.from('h1 .b', {
+  y: 80,
   opacity: 0,
-});
-
-tl.pause(); //Initiall animation pause hunxa ,,hamburger click bhayesi matra animation Play() hunxa
-
-// menu items show garna
-menu.addEventListener('click', () => {
-  tl.play();
-});
-
-closeBtn.addEventListener('click', () => {
-  tl.reverse();
+  duration: 0.6,
+  delay: 0.5,
+  stagger: -0.15,
 });
